@@ -1,0 +1,33 @@
+table {
+    width: 65%;
+    max-width: 950px;
+    border-spacing:0;
+}
+
+tr {
+    line-height: 24px;
+}
+
+
+
+tbody tr td {
+    vertical-align: bottom;
+    border-bottom: 1px solid black;
+}
+
+.dataTables_filter {
+    position: absolute;
+    top: 50px;
+    right: 100px;
+    z-index: 100; }
+img.viewIcon { height: 24px;
+}
+
+a:link, a {
+    color: #e00;
+    transition: color 0.35s;
+}
+
+a:hover {
+    color: #333;
+}

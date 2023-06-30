@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/png" href="../images/favicon.jpg" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="../js/steps.js"></script>
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<title>Instalacja Proxmox VE 8.0</title>
+</head>
+
+<body>
+	<div id="gridContainer">
+	
+	<div id="listName" class="topMargin">
+		<h1>Instalacja Proxmox VE 8.0</h1>
+	</div>
+
+	
+	
+	<div id="content">
+		<ol>
+			<li>Pobierz Proxmox VE<a href="https://www.proxmox.com/en/downloads" target="_blank"> Download</a></li>
+			<li>Pobierz program do tworzenia nośnika rozruchowego USB np. Rufus <a href="https://rufus.ie/pl/" target="_blank"> Download</a></li>
+			<li>Stwórz nośnik rozruchowy na nośniku USB</li>
+			<li>Włóż nośnik rozruchowy USB do serwera</li>
+			<li>Ustaw w BIOS rozruch z USB</li>
+			<li>Wybierz instalacje:
+				<p>Install Proxmox VE (Graphical)</p>
+			</li>
+			<li>Akceptuj warunki licencji EULA:
+				<p>I agree</p>
+			</li>
+			<li>Wybierz dysk na którym ma zostać wykonana instalacja i naciśnij - "Next"
+				<p>Target Harddisk</p>
+			</li>
+				
+			<li>Wybierz kraj, strefę czasową, układ klawiszy, naciśnij Next
+				<p>Country<br />
+				Time zone<br />
+				Keyboard Layout</p>
+			</li>
+			<li>Wpisz hasło głównego użytkownika, wprowadź adres poczty, naciśnij - "Next"
+				<p>Password <br />
+					Confirm<br />
+					Email</p>
+			</li>
+
+			<li>Wybierz główna kartę sieciową, wprowadź nazwę hosta, wprowadź statyczny adres IP, bramkę, adres serwera DNS, naciśnij - "Next"
+				<p>Management Interface <br />
+					Hostname (FQDN)<br />
+					IP Address (CIDR)<br />
+					Gateway<br />
+					DNS Server
+				</p>
+			</li>
+			<li>Sprawdź poprawność danych w podsumowaniu, naciśnij – "Install"</li>
+			<li>Poczekaj na zakończenie procesu instalacji, serwer powinien wykonać automatyczny restart</li>
+			<li>Otwórz przeglądarkę internetową, wpisz adres serwera:
+				<p>https://IP-SERWERA:8006/</p>
+			</li>
+			<li>Zatwierdź brak poświadczeń protokoły SSL</li>
+			<li>Zaloguj się do Proxmox VE, opcjonalnie zmień język – „Language”
+				<p>User name: root <br />Password: (wpisane podczas procesu instalacyjnego)</p>
+			</li>
+
+		</ol>
+	</div>    
+</body>
+</html>
+  
