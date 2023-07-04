@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="shortcut icon" type="image/png" href="../images/favicon.jpg" />
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+	<script type="text/javascript" src="../js/steps.js"></script>
+	<link href="../css/style.css" rel="stylesheet" type="text/css" />
+	<title>Konfiguracja Proxmox 8.0</title>
+</head>
+
+<body>
+	<div id="gridContainer">
+	
+	<div id="listName" class="topMargin">
+		<h1>Konfiguracja Proxmox 8.0</h1>
+	</div>
+
+	
+	
+	<div id="content">
+		<h2>Wyłączenie kominukatu braku subscrybcji</h2>
+		<ol>
+			<li>Zaloguj się do Proxmox z poziomu przeglądarki</li>
+			<li>Wejdz do consoli Shell - Datacenter -> "twój node" -> >_ Shell</li>
+			<li>Wprowadź:
+			<div class="codeBlock"># polecenie wyłączenia komunikatu o braku subscrybcji<br />
+				sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service</div></li>
+			<li>Odśwież pamięć podręczną przeglądarki CTRL + F5</li>
+		</ol>
+
+		<br /><br />
+		<h2>Włączenie repozytorium dla wersji bez subscrybcji</h2>
+		<ol>
+			<li>Zaloguj się do Proxmox z poziomu przeglądarki</a></li>
+			<li>Otwórz zakładkę z repozytoriami - Datacenter -> "twój node -> Updates -> Repositories</li>
+			<li>Wybierz: Add, potwierdź brak subskrybcji</li>
+			<li>Wybierz: "Repository",  wybierz: "No-Subscription", potwierdź: "Add"</li>
+			<li>Wybierz: Add, potwierdź brak subskrybcji</li>
+			<li>Wybierz: "Repository",  wybierz: "Ceph Quincy No-Subscription", potwierdź: "Add"</li>
+			<h3>Włączenie repozytorium dla wersji bez subscrybcji</h3>
+			<li>Lista: "deb https://enterprise.proxmox.com/debian/ceph-quincy" bookworm enterprise-> "Enable"</li>
+			<li>Lista: "deb https://enterprise.proxmox.com/debian/pve" bookworm pve-enterprise -> "Enable"</li>
+		</ol>
+
+	</div>    
+</body>
+</html>
+  
